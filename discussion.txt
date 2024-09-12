@@ -1,0 +1,48 @@
+3.a
+void swap(int *a, int *b)
+{
+  int tmp;
+  tmp = *a;
+  *a = *b;
+  *b = tmp;
+}
+
+3.b
+int mystrlen(char *str)
+{
+  int n=0;
+  while(str[n] != '\0')
+  {
+    n++;
+  }
+  return n;
+}
+
+4.2
+int *arr = (int *) malloc(7 * sizeof(int))
+char *str = (char *) malloc((p + 1) * sizeof(char))
+int n, m;
+int *mat = (int *)malloc(n * m * sizeof(int));
+for (i=0; i< n*m; i++){
+  mat[i] = 0;
+}
+
+4.4
+void prepend(struct ll_node **lst, int value)
+{
+  struct ll_node *item = (struct ll_node *)malloc(sizeof(struct ll_node));
+  item->first = value;
+  item->rest = *lst;
+  *lst = item;
+}
+
+4.5 
+void free_ll(struct ll_node **lst)
+{
+  if (*lst)
+    {
+      free_ll(*lst->rest);
+      free(*lst);
+    }
+  *lst = null;
+}
